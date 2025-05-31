@@ -12,3 +12,4 @@ docker run -d -p 8080:80 my-static-site
 // -p sets the port on which nginx has to listen.
 // 8080:80 = <host_port>:<container_port>
 
+sadasdas
