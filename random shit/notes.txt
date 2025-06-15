@@ -19,3 +19,8 @@ docker ps
 
 docker stop <id>
 docker remove <id>
+
+
+docker compose up --build
+
+docker compose down -v
