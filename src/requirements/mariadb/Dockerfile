@@ -1,1 +1,1 @@
-FROM alpine:3.20.6
+FROM debian:12.10
