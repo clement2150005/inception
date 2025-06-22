@@ -11,16 +11,30 @@ services:
       - backend
     volumes:
       - wp_data:/var/www/html
+    restart: always
 
   wordpress:
     build: ./requirements/wordpress
+    depends_on:
+      - mariadb
     networks:
       - backend
     volumes:
       - wp_data:/var/www/html
+    restart: always
+
+  mariadb:
+    build: ./requirements/mariadb
+    env_file: .env
+    networks:
+      - backend
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    restart: always
 
 volumes:
   wp_data: {}
+  mariadb_data: {}
 
 networks:
   backend:
