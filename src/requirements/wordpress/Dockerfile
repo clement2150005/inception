@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	ln -s /usr/sbin/php-fpm8.2 /usr/sbin/php-fpm && \
 	rm -rf /var/lib/apt/lists/*
 
-COPY www.conf /etc/php/8.2/fpm/pool.d/www.conf
+COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
+COPY conf/wp-config.php /var/www/html/wp-config.php
 
 WORKDIR /var/www/html
 RUN curl -O https://wordpress.org/latest.tar.gz && \

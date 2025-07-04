@@ -33,8 +33,17 @@ services:
     restart: always
 
 volumes:
-  wp_data: {}
-  mariadb_data: {}
+  wp_data:
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/ccolin/data/wp_data
+  mariadb_data:
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/ccolin/data/mariadb_data
+
 
 networks:
   backend:
